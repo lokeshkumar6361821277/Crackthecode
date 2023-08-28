@@ -1,0 +1,138 @@
+#take input from the user to ask choice of names.
+#ask the user to select the options like to log or to retrieve the information.
+#ask the user to select the options like exercise or diet.
+#ask the user to input the data like exercise or diet.
+#STEPS TO FOLLOW
+'''
+1)define a function of log and to retrieve.
+2)create an input variable and take the inputs.
+3)open a file and append the user input in it using file operations.
+4)import daytime function to cancatinate with user data.
+5)
+'''
+import datetime
+try:
+    def gettime():
+        return datetime.datetime.now()
+    def retrieve(c):
+        if c == 1:
+            print("YOU CHOOSEN LOKESH")
+            user_1 = int(input("choose 1 for exercise or 2 for diet: "))
+            if user_1 == 1:
+                print("YOU CHOOSEN EXERCISE")
+                with open("lokesh-exercis.txt") as lk:
+                    for i in lk:
+                        print(i,end=" ")
+            elif user_1 == 2:
+                print("YOU CHOOSEN DIET")
+                with open("lokesh-die.txt") as lk1:
+                    for i in lk1:
+                        print(i,end=" ")
+            else:
+                print("invalid choice")
+        elif c == 2:
+            print("YOU CHOOSEN ROLEX")
+            user_1 = int(input("choose 1 for exercise or 2 for diet: "))
+            if user_1 == 1:
+                print("YOU CHOOSEN EXERCISE")
+                with open("rolex-exercis.txt") as lk:
+                    for i in lk:
+                        print(i,end=" ")
+            elif user_1 == 2:
+                print("YOU CHOOSEN DIET")
+                with open("rolex-die.txt") as lk1:
+                    for i in lk1:
+                        print(i,end=" ")
+            else:
+                print("   ...INVALID CHOICE...   ")
+        elif c == 3:
+            print("YOU CHOOSEN SURIYA")
+            user_1 = int(input("choose 1 for exercise or 2 for diet: "))
+            if user_1 == 1:
+                print("YOU CHOOSEN EXERCISE")
+                with open("suriya-exercis.txt") as lk:
+                    for i in lk:
+                        print(i,end=" ")
+            elif user_1 == 2:
+                print("YOU CHOOSEN DIET")
+                with open("suriya-die.txt") as lk1:
+                    for i in lk1:
+                        print(i,end=" ")
+            else:
+                print("   ...INVALID CHOICE...   ")
+        else:
+            print("   ...INVALID CHOICE...   ")
+    def feed(b):
+        if b==1:
+            print("YOU CHOOSEN LOKESH")
+            user1=int(input("choose 1 for exercise or 2 for diet: "))
+            if user1==1:
+                print("YOU CHOOSEN EXERCISE")
+                user_feed=input("enter the feeding data: ")
+                with open("lokesh-exercis.txt","a") as lk:
+                 lk.write(str([str(gettime())])+ ": " + user_feed + "\n")
+                 print("you have succcesfully fed the data")
+            elif user1==2:
+                print("YOU CHOOSEN DIET")
+                user_feed1=input("enter the feeding data: ")
+                with open("lokesh-die.txt","a")  as lk1:
+                 lk1.write(str([str(gettime())])+ ": " + user_feed1 + "\n")
+                 print("you have succesfully fed the data")
+            else:
+                print("   ...INVALID CHOICE...   ")
+        elif b == 2:
+            print("you choosen rolex")
+            user2 = int(input("choose 1 for exercise or 2 for diet: "))
+            if user2 == 1:
+                print("YOU CHOOSEN EXERCISE")
+                user_feed3 = input("enter the feeding data: ")
+                with open("rolex-exercis.txt", "a") as lk:
+                    lk.write(str([str(gettime())])+ ": " + user_feed3 + "\n")
+                    print("you have succcesfully fed the data")
+            elif user2 == 2:
+                print("YOU CHOOSEN DIET")
+                user_feed4 = input("enter the feeding data: ")
+                with open("rolex-die.txt", "a") as lk1:
+                    lk1.write(str([str(gettime())])+ ": " + user_feed4+ "\n")
+                    print("you have succesfully fed the data")
+            else:
+                print("invalid choice")
+        elif b == 3:
+            print("YOU CHOOSEN SURIYA")
+            user3 = int(input("choose 1 for exercise or 2 for diet: "))
+            if user3 == 1:
+                print("YOU CHOOSEN EXERCISE")
+                user_feed5 = input("enter the feeding data: ")
+                with open("suriya-exercis.txt", "a") as lk:
+                    lk.write(str([str(gettime())])+ ": " + user_feed5 + "\n")
+                    print("you have succcesfully fed the data")
+            elif user3 == 2:
+                print("TOU CHOOSEN DIET")
+                user_feed6 = input("enter the feeding data: ")
+                with open("suriya-die.txt", "a") as lk1:
+                    lk1.write(str([str(gettime())])+ ": " + user_feed6 + "\n")
+                    print("you have succesfully fed the data")
+            else:
+                print("   ...INVALID CHOICE...   ")
+        else:
+            print("   ...INVALID CHOICE...   ")
+
+
+    print("                                                       ...HEALTH MANAGEMENT SYSTEM...                                                                    ")
+    a=int(input("choose 1 to feed or 2 to retrieve: "))
+    if a==1:
+        print("   YOU CHOOSED TO FEED   ")
+        data1=int(input("Enter 1 for lokesh,2 for rolex,3 for suriya: "))
+        feed(data1)
+    elif a==2:
+        print("   YOU CHOOSED TO RETRIEVE   ")
+        data2=int(input("Enter 1 for lokesh,2 for rolex,3 for suriya: "))
+        retrieve(data2)
+    else:
+        print("   ...INVALID CHOICE...   ")
+
+except execption as e:
+     print(e)
+
+
+
