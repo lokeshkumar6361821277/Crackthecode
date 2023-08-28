@@ -1,0 +1,69 @@
+#SNAKE,GUN,WATER GAME 🎮
+import random
+print("   ...get ready to play...  ")
+chances=int(input("enter the chances you want(1-10): "))
+you=0
+pc1=0
+if chances<=10:
+    i=1
+    while i<=chances:
+        lst = ['s','w','g']
+        input1 =(input("\ns for (snake)\nw for (water)\ng for (gun)\nselect your choice:"))
+        pc = random.choice(lst)
+        # user inputs snake
+        if input1=="s" and pc=="s":
+            print("yours snake v/s pc snake")
+            print("draw")
+            print(f"you left with {chances-i} chances")
+        elif input1=="s" and pc=="w":
+            you+=1
+            print("yours snake drank pc ka water\nyou got 1 point")
+            print(f"yours score={you} and pc score={pc1}")
+            print(f"you left with {chances-i} chances")
+        elif input1=="s" and pc=="g":
+            pc1+=1
+            print("yours snake got killed by pc ka gun\npc got 1 point")
+            print(f"yours score={you} and pc score={pc1}")
+        #user inputs water
+        elif input1 == "w" and pc == "w":
+            print("yours water v/s pc water")
+            print("draw")
+            print(f"you left with {chances - i} chances")
+        elif input1 == "w" and pc == "s":
+            pc1 += 1
+            print("pc snake drank your water\npc got 1 point")
+            print(f"yours score={you} and pc score={pc1}")
+            print(f"you left with {chances - i} chances")
+        elif input1 == "w" and pc == "g":
+            you += 1
+            print("pc ka gun water mhe dooobgaya\nyou got 1 point")
+            print(f"yours score={you} and pc score={pc1}")
+        #user inputs gun
+        elif input1 == "g" and pc == "g":
+            print("yours gun v/s pc gun")
+            print("draw")
+            print(f"you left with {chances - i} chances")
+        elif input1 == "g" and pc == "s":
+            you += 1
+            print("your gun killed pc ka snake\nyou got 1 point")
+            print(f"yours score={you} and pc score={pc1}")
+            print(f"you left with {chances - i} chances")
+        elif input1 == "g" and pc == "w":
+            pc1 += 1
+            print("your gun pc ka water mhe dooobgaya\npc got 1 point")
+            print(f"yours score={you} and pc score={pc1}")
+        else:
+            print("enter the valid input")
+            continue
+        i+=1
+    print("game over")
+    if pc1==you:
+        print("draw match")
+    elif pc1<you:
+        you_won=you-pc1
+        print(f"you won by {you_won} points on pc")
+    else:
+        pc_won=pc1-you
+        print(f"pc won by {pc_won} points on you")
+else:
+    print("enter the valid chances")
