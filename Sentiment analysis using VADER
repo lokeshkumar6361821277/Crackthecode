@@ -1,0 +1,15 @@
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+sia=SentimentIntensityAnalyzer() # Initialize the SentimentIntensityAnalyzer
+def analyser(text):                #defining the function for analysing the text.
+  s=sia.polarity_scores(text)      #initializing polarity_scores function from SentimentIntensityAnalyzer as 's' variable.
+  print(s)                     
+  compound_score =s['compound']
+  if compound_score >= 0.05:       #using conditional statement to find accurate output.
+      print("Positive") 
+  elif compound_score <= -0.05:    # adjust values if you want more accurate outputs.
+      print("Negative")
+  else:
+      print("Neutral") 
+text=input("enter the response: ") #input from the user.
+analyser(text)   #initializing the analyser() function.
